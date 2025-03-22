@@ -16,27 +16,5 @@ terraform {
   }
 }
 ```
-Why specify a version?
 
-Avoid unexpected updates: If Terraform upgrades to a newer provider version, it might introduce breaking changes.
-Ensure consistency: Everyone on your team will use the same provider version.
-
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
-}
-
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
-}
 
