@@ -17,6 +17,7 @@ terraform {
 }
 ```
 Why specify a version?
+
 Avoid unexpected updates: If Terraform upgrades to a newer provider version, it might introduce breaking changes.
 Ensure consistency: Everyone on your team will use the same provider version.
 
