@@ -42,4 +42,24 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 
+Authentication:
+
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
+
+
+% export AWS_ACCESS_KEY_ID="anaccesskey"
+% export AWS_SECRET_ACCESS_KEY="asecretkey"
+% export AWS_REGION="us-west-2"
+
+
+These values can be given as
+1. parametrs in providers block
+2. as environmental variables
+3. shared configuartion and credential files $HOME/.aws/config  $HOME/.aws/credentials
+   
+   
 
