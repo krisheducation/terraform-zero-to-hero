@@ -29,3 +29,17 @@ terraform apply -var-file=dev.tfvars
 ```
 
 By using `.tfvars` files, you can keep your Terraform code more generic and flexible while tailoring configurations to different scenarios and environments.
+
+We donot need to checkin the tfvars file to the source code, we can put it in .gitignore and send it to github repo.
+Any one who wants to execute the terraform code can create their own tfvars file and pass the variables to the main code.
+Now when we will run terraform apply, it will apply the tfvars value to the variables before execution.
+We can have multiple tf vars file like dev.tfvars, prod.tfvars etc
+
+terraform apply -var-file=dev.tfvars
+
+Now say I have 100 resource, the I need to modularize.
+Create a folder called module
+push all the file inside the folder except tfvars, since the person executing it will bring his own tfvars according to his needs and put it inside module.
+
+
+
